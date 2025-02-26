@@ -18,7 +18,7 @@ class CreateTestingUsersTable extends Migration
         Schema::create('users', static function (Blueprint $table) {
             $table->id();
             $table->string('phone')->unique();
-            $table->unsignedDecimal('paid_amount', 12);
+            $table->decimal('paid_amount', 12)->unsigned();
             $table->boolean('is_active')->default(true);
             $table->timestamps();
         });
